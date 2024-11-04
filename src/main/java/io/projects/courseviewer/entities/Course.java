@@ -1,6 +1,8 @@
 package io.projects.courseviewer.entities;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotEmpty;
 
 import java.util.Objects;
 
@@ -10,6 +12,7 @@ public class Course {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @Column(name ="name" )
+    @NotEmpty(message = "Name cannot be empty")
     private String name;
 
     public Course() {
