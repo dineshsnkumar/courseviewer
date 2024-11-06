@@ -11,6 +11,7 @@ import java.util.Optional;
  Main controller which fetches the list of courses, specific course, course details
  */
 @RestController
+@RequestMapping("/courses")
 public class CourseController {
 
     private final CourseService courseService;
@@ -19,12 +20,12 @@ public class CourseController {
        this.courseService = courseService;
    }
 
-    @GetMapping("/courses")
+    @GetMapping
     public List<Course> courses(){
         return courseService.getAllCourses();
     }
 
-    @GetMapping("/courses/{id}")
+    @GetMapping("/{id}")
     public Optional<Course> courses(@PathVariable Long id){
         return courseService.getCourseById(id);
     }
