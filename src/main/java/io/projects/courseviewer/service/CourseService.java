@@ -26,4 +26,16 @@ public class CourseService {
         return courseRepository.findById(id);
     }
 
+    public Course saveOrUpdateCourse(Course course){
+        return courseRepository.save(course);
+    }
+
+    public void delete(Course course){
+        courseRepository.delete(course);
+    }
+
+    public void deleteById(long id){
+        courseRepository.deleteById(id);
+    }
+
 }

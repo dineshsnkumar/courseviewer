@@ -16,7 +16,7 @@ public class CourseController {
 
     private final CourseService courseService;
 
-   public CourseController(CourseService courseService){
+    public CourseController(CourseService courseService){
        this.courseService = courseService;
    }
 
@@ -28,6 +28,26 @@ public class CourseController {
     @GetMapping("/{id}")
     public Optional<Course> courses(@PathVariable Long id){
         return courseService.getCourseById(id);
+    }
+
+    @PostMapping
+    public Course saveCourse(@RequestBody Course course){
+       return courseService.saveOrUpdateCourse(course);
+    }
+
+    @PutMapping
+    public Course updateCourse(@RequestBody Course course){
+        return courseService.saveOrUpdateCourse(course);
+    }
+
+    @DeleteMapping
+    public void deleteCourse(@RequestBody Course course){
+        courseService.delete(course);
+    }
+
+    @DeleteMapping("/{id}")
+    public void deleteCourse(@PathVariable long id){
+        courseService.deleteById(id);
     }
 
 }
