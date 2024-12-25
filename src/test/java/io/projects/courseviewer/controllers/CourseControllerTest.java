@@ -59,9 +59,9 @@ public class CourseControllerTest {
    }
 
    @Test
-    void getCourseThatDoesNotExist(Long id){
+    void getCourseThatDoesNotExist(){
         webClient.get()
-                .uri("/courses/{id}", 99)
+                .uri("/courses/{id}", 99L)
                 .exchange()
                 .expectStatus().isOk();
     }

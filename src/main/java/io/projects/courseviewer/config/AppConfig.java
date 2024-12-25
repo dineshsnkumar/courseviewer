@@ -22,7 +22,8 @@ public class AppConfig implements CommandLineRunner {
             courseRepository.saveAll(
                     List.of(
                             new Course("Intro to World Religions"),
-                            new Course( "Spiritual Developments")
+                            new Course( "Spiritual Developments"),
+                            new Course( "Literature")
                             )
             ).forEach(System.out::println);
         }
