@@ -7,13 +7,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
-@EnableBatchProcessing
+//@EnableBatchProcessing
 public class BatchConfig {
 
-    @Autowired
-    private JobBuilder jobBuilder;
-    @Autowired
-    private StepBuilder stepBuilder;
+//    @Autowired
+//    private JobBuilder jobBuilder;
+//    @Autowired
+//    private StepBuilder stepBuilder;
 
 
 }
